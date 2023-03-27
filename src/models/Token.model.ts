@@ -4,7 +4,7 @@ import { User } from "./User.model";
 
 const tokensSchema = new Schema(
   {
-    _user_id: {
+    user: {
       type: Types.ObjectId,
       required: true,
       ref: User,

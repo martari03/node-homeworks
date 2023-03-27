@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import { configs } from "./configs";
 import { cronRunner } from "./crons";
 import { AppError } from "./errors";
-import { authRouter, userRouter, welcomeRouter } from "./routers";
+import { authRouter, carRouter, userRouter, welcomeRouter } from "./routers";
 
 const app = express();
 
@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/auth", authRouter);
+app.use("/cars", carRouter);
 app.use("/users", userRouter);
 app.use("/welcome", welcomeRouter);
 
