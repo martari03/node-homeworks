@@ -1,0 +1,45 @@
+{
+  "name": "homeworks-node",
+  "version": "1.0.0",
+  "description": "node homeworks from okten",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "rimraf dist && tsc-watch --onSuccess \"yarn run watch\"",
+    "watch": "nodemon \"src/app.ts\" --watch \"./src\"",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "prepare": "husky install"
+  },
+  "repository": "https://github.com/martari03/homeworks-node.git",
+  "author": "Marta <rishnyakmarta@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martari03/homeworks-node/issues"
+  },
+  "homepage": "hhttps://github.com/martari03/homeworks-node#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "joi": "^17.8.3",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.0",
+    "prettier": "^2.8.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-sort-exports": "^0.8.0",
+    "husky": "^8.0.3",
+    "nodemon": "^2.0.21",
+    "rimraf": "^4.2.0",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^6.0.0",
+    "typescript": "^4.9.5"
+  }
+}
