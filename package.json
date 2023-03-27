@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "node homeworks from okten",
   "main": "app.js",
-  "repository": "https://github.com/martari03/homeworks-node.git",
+  "repository": "https://github.com/martari03/node-homeworks.git",
   "author": "Marta <rishnyakmarta@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/martari03/homeworks-node/issues"
+    "url": "https://github.com/martari03/node-homeworks/issues"
   },
-  "homepage": "hhttps://github.com/martari03/homeworks-node#readme",
+  "homepage": "hhttps://github.com/martari03/node-homeworks#readme",
   "dependencies": {
     "express": "^4.18.2"
   }
