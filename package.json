@@ -1,0 +1,16 @@
+{
+  "name": "homeworks-node",
+  "version": "1.0.0",
+  "description": "node homeworks from okten",
+  "main": "app.js",
+  "repository": "https://github.com/martari03/homeworks-node.git",
+  "author": "Marta <rishnyakmarta@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martari03/homeworks-node/issues"
+  },
+  "homepage": "hhttps://github.com/martari03/homeworks-node#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
