@@ -1,5 +1,5 @@
 {
-  "name": "homeworks-node",
+  "name": "node-homeworks",
   "version": "1.0.0",
   "description": "node homeworks from okten",
   "main": "src/app.ts",
