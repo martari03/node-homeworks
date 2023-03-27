@@ -2,8 +2,9 @@ import express, { NextFunction, Request, Response } from "express";
 import mongoose from "mongoose";
 
 import { configs } from "./configs";
+import { cronRunner } from "./crons";
+import { AppError } from "./errors";
 import { authRouter, userRouter, welcomeRouter } from "./routers";
-import { IError } from "./types";
 
 const app = express();
 
@@ -14,7 +15,7 @@ app.use("/auth", authRouter);
 app.use("/users", userRouter);
 app.use("/welcome", welcomeRouter);
 
-app.use((err: IError, req: Request, res: Response, next: NextFunction) => {
+app.use((err: AppError, req: Request, res: Response, next: NextFunction) => {
   const status = err.status;
 
   return res.status(status).json({
@@ -25,6 +26,7 @@ app.use((err: IError, req: Request, res: Response, next: NextFunction) => {
 
 app.listen(configs.PORT, async () => {
   await mongoose.connect(configs.DB_URL);
+  cronRunner();
   // eslint-disable-next-line no-console
   console.log(`Server has started on PORT ${configs.PORT}`);
 });
