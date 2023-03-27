@@ -1,22 +1,17 @@
 import { model, Schema, Types } from "mongoose";
 
-import { EActionTokenType } from "../enums";
 import { User } from "./User.model";
 
-const actionTokensSchema = new Schema(
+const oldPasswordSchema = new Schema(
   {
     _user_id: {
       type: Types.ObjectId,
       required: true,
       ref: User,
     },
-    actionToken: {
+    password: {
       type: String,
       required: true,
-    },
-    tokenType: {
-      type: String,
-      enum: EActionTokenType,
     },
   },
   {
@@ -25,4 +20,4 @@ const actionTokensSchema = new Schema(
   }
 );
 
-export const Action = model("Action", actionTokensSchema);
+export const OldPassword = model("OldPassword", oldPasswordSchema);

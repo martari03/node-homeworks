@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 
 import { User } from "../models";
 import { userService } from "../services";
-import { IResponse, IUser } from "../types";
+import { ICommonResponse, IUser } from "../types";
 
 class UserController {
   public async getAll(
@@ -36,7 +36,7 @@ class UserController {
     req: Request,
     res: Response,
     next: NextFunction
-  ): Promise<Response<IResponse<IUser>>> {
+  ): Promise<Response<ICommonResponse<IUser>>> {
     try {
       const body = req.body;
       const user = await User.create(body);
