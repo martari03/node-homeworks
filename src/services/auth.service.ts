@@ -1,7 +1,10 @@
+import { EEmailActions, ESmsActionEnum } from "../enums";
 import { AppError } from "../errors";
 import { Token, User } from "../models";
 import { ICredentials, ITokenPair, ITokenPayload, IUser } from "../types";
+import { emailService } from "./email.service";
 import { passwordService } from "./password.service";
+import { smsService } from "./sms.service";
 import { tokenService } from "./token.service";
 
 class AuthService {
@@ -13,6 +16,11 @@ class AuthService {
         ...body,
         password: hashedPassword,
       });
+
+      await Promise.all([
+        smsService.sendSms(body.phone, ESmsActionEnum.WELCOME),
+        emailService.sendMail(body.email, EEmailActions.WELCOME),
+      ]);
     } catch (e) {
       throw new AppError(e.message, e.status);
     }
@@ -29,7 +37,7 @@ class AuthService {
       );
 
       if (!isMatched) {
-        throw new AppError("Invalid email or password", 400);
+        throw new AppError("Invalid email or password", 409);
       }
 
       const tokenPair = tokenService.generateTokenPair({
@@ -66,6 +74,23 @@ class AuthService {
     } catch (e) {
       throw new AppError(e.message, e.status);
     }
+  }
+
+  public async changePassword(
+    userId: string,
+    oldPassword: string,
+    newPassword: string
+  ): Promise<void> {
+    const user = await User.findById(userId);
+
+    const isMatched = await passwordService.compare(oldPassword, user.password);
+
+    if (!isMatched) {
+      throw new AppError("Wrong old password", 400);
+    }
+
+    const hashedNewPassword = await passwordService.hash(newPassword);
+    await User.updateOne({ _id: user._id }, { password: hashedNewPassword });
   }
 }
 

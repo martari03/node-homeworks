@@ -6,7 +6,6 @@ const userSchema = new Schema(
   {
     name: {
       type: String,
-      trim: true,
     },
     email: {
       type: String,
@@ -23,9 +22,13 @@ const userSchema = new Schema(
       type: String,
       enum: EGenders,
     },
+    phone: {
+      type: String,
+    },
   },
   {
     versionKey: false,
+    timestamps: true,
   }
 );
 
