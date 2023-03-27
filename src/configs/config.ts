@@ -15,4 +15,9 @@ export const configs = {
   TWILIO_AUTH_TOKEN: process.env.TWILIO_AUTH_TOKEN,
   TWILIO_ACCOUNT_SID: process.env.TWILIO_ACCOUNT_SID,
   TWILIO_SERVICE_SID: process.env.TWILIO_SERVICE_SID,
+
+  FRONT_URL: process.env.FRONT_URL,
+
+  FORGOT_SECRET: process.env.JWT_FORGOT_SECRET,
+  ACTIVATE_SECRET: process.env.JWT_ACTIVATE_SECRET,
 };

@@ -1,11 +1,7 @@
-export interface IError extends Error {
-  status: number;
+export interface ICommonResponse<T> extends IMessage {
+  data: T;
 }
 
 export interface IMessage {
   message: string;
-}
-
-export interface IResponse<T> extends IMessage {
-  data: T;
 }
