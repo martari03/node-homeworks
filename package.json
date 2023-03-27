@@ -1,5 +1,5 @@
 {
-  "name": "homeworks-node",
+  "name": "node-homeworks",
   "version": "1.0.0",
   "description": "node homeworks from okten",
   "main": "src/app.ts",
@@ -9,13 +9,13 @@
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "prepare": "husky install"
   },
-  "repository": "https://github.com/martari03/homeworks-node.git",
+  "repository": "https://github.com/martari03/node-homeworks.git",
   "author": "Marta <rishnyakmarta@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/martari03/homeworks-node/issues"
+    "url": "https://github.com/martari03/node-homeworks/issues"
   },
-  "homepage": "hhttps://github.com/martari03/homeworks-node#readme",
+  "homepage": "hhttps://github.com/martari03/node-homeworks#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
