@@ -20,11 +20,13 @@ const carSchema = new Schema(
       type: Number,
       required: true,
     },
-    user: {
-      type: Types.ObjectId,
-      required: true,
-      ref: User,
-    },
+    user: [
+      {
+        type: Types.ObjectId,
+        required: true,
+        ref: User,
+      },
+    ],
   },
   {
     versionKey: false,

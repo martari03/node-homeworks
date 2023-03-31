@@ -4,11 +4,13 @@ import { User } from "./User.model";
 
 const oldPasswordSchema = new Schema(
   {
-    _user_id: {
-      type: Types.ObjectId,
-      required: true,
-      ref: User,
-    },
+    _user_id: [
+      {
+        type: Types.ObjectId,
+        required: true,
+        ref: User,
+      },
+    ],
     password: {
       type: String,
       required: true,

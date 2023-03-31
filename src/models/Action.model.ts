@@ -5,11 +5,13 @@ import { User } from "./User.model";
 
 const actionTokensSchema = new Schema(
   {
-    _user_id: {
-      type: Types.ObjectId,
-      required: true,
-      ref: User,
-    },
+    _user_id: [
+      {
+        type: Types.ObjectId,
+        required: true,
+        ref: User,
+      },
+    ],
     actionToken: {
       type: String,
       required: true,
